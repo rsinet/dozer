@@ -15,12 +15,12 @@
  */
 package com.github.dozermapper.core.converters;
 
-import com.github.dozermapper.core.AbstractDozerTest;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import com.github.dozermapper.core.AbstractDozerTest;
 
 public class IntegerConverterTest extends AbstractDozerTest {
 

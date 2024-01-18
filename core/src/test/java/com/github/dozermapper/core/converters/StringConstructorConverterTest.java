@@ -15,14 +15,14 @@
  */
 package com.github.dozermapper.core.converters;
 
-import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
 
-import com.github.dozermapper.core.AbstractDozerTest;
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import com.github.dozermapper.core.AbstractDozerTest;
 
 public class StringConstructorConverterTest extends AbstractDozerTest {
 

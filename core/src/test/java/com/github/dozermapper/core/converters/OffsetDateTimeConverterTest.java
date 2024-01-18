@@ -15,6 +15,8 @@
  */
 package com.github.dozermapper.core.converters;
 
+import static org.junit.Assert.assertTrue;
+
 import java.time.Instant;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
@@ -26,8 +28,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
 
 public class OffsetDateTimeConverterTest {
 

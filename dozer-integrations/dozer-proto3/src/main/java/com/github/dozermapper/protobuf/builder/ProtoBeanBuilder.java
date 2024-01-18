@@ -15,8 +15,13 @@
  */
 package com.github.dozermapper.protobuf.builder;
 
+import java.lang.reflect.InvocationTargetException;
+
+import org.apache.commons.beanutils.BeanUtils;
+
 import com.github.dozermapper.core.BeanBuilder;
 import com.google.protobuf.Message;
+import com.google.protobuf.Message.Builder;
 
 /**
  * {@link BeanBuilder} that instantiates {@link Message}
@@ -33,8 +38,13 @@ public class ProtoBeanBuilder implements BeanBuilder {
      * @param beanClass            type of {@link Message} to create
      */
     public ProtoBeanBuilder(Message.Builder internalProtoBuilder, Class<? extends Message> beanClass) {
-        this.internalProtoBuilder = internalProtoBuilder;
-        this.beanClass = beanClass;
+        try {
+            this.internalProtoBuilder = (Builder) BeanUtils.cloneBean(internalProtoBuilder);
+            this.beanClass = (Class<? extends Message>) BeanUtils.cloneBean(beanClass);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException
+                | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -51,7 +61,7 @@ public class ProtoBeanBuilder implements BeanBuilder {
      * @return instance of {@link Message.Builder}
      */
     public Message.Builder internalProtoBuilder() {
-        return internalProtoBuilder;
+        return internalProtoBuilder.clone();
     }
 
     /**

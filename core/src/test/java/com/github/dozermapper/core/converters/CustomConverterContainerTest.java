@@ -15,20 +15,20 @@
  */
 package com.github.dozermapper.core.converters;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.github.dozermapper.core.AbstractDozerTest;
-import com.github.dozermapper.core.cache.CacheKeyFactory;
-import com.github.dozermapper.core.cache.DefaultCache;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.github.dozermapper.core.AbstractDozerTest;
+import com.github.dozermapper.core.cache.CacheKeyFactory;
+import com.github.dozermapper.core.cache.DefaultCache;
 
 public class CustomConverterContainerTest extends AbstractDozerTest {
 

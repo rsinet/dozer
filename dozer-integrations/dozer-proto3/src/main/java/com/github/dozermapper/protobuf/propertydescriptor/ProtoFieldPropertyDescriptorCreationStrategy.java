@@ -15,6 +15,10 @@
  */
 package com.github.dozermapper.protobuf.propertydescriptor;
 
+import java.lang.reflect.InvocationTargetException;
+
+import org.apache.commons.beanutils.BeanUtils;
+
 import com.github.dozermapper.core.config.BeanContainer;
 import com.github.dozermapper.core.factory.DestBeanCreator;
 import com.github.dozermapper.core.fieldmap.HintContainer;
@@ -32,9 +36,9 @@ import com.google.protobuf.Message;
  */
 public class ProtoFieldPropertyDescriptorCreationStrategy implements PropertyDescriptorCreationStrategy {
 
-    private final BeanContainer beanContainer;
-    private final DestBeanCreator destBeanCreator;
-    private final PropertyDescriptorFactory propertyDescriptorFactory;
+    private BeanContainer beanContainer;
+    private DestBeanCreator destBeanCreator;
+    private PropertyDescriptorFactory propertyDescriptorFactory;
 
     /**
      * {@link PropertyDescriptorCreationStrategy} which is used to create instances of {@link DozerPropertyDescriptor}
@@ -44,9 +48,14 @@ public class ProtoFieldPropertyDescriptorCreationStrategy implements PropertyDes
      * @param propertyDescriptorFactory {@link PropertyDescriptorFactory} instance
      */
     public ProtoFieldPropertyDescriptorCreationStrategy(BeanContainer beanContainer, DestBeanCreator destBeanCreator, PropertyDescriptorFactory propertyDescriptorFactory) {
-        this.beanContainer = beanContainer;
-        this.destBeanCreator = destBeanCreator;
-        this.propertyDescriptorFactory = propertyDescriptorFactory;
+        try {
+            this.beanContainer = (BeanContainer) BeanUtils.cloneBean(beanContainer);
+            this.destBeanCreator = (DestBeanCreator) BeanUtils.cloneBean(destBeanCreator);
+            this.propertyDescriptorFactory = (PropertyDescriptorFactory) BeanUtils.cloneBean(propertyDescriptorFactory);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException
+                | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

@@ -15,14 +15,19 @@
  */
 package com.github.dozermapper.core.converters;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import com.github.dozermapper.core.AbstractDozerTest;
 import com.github.dozermapper.core.MappingException;
@@ -30,11 +35,7 @@ import com.github.dozermapper.core.config.BeanContainer;
 import com.github.dozermapper.core.vo.jaxb.employee.EmployeeType;
 import com.github.dozermapper.core.vo.jaxb.employee.EmployeeWithInnerClass;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import jakarta.xml.bind.JAXBElement;
 
 public class JAXBElementConverterTest extends AbstractDozerTest {
 

@@ -17,9 +17,9 @@ package com.github.dozermapper.core.converters;
 
 import java.text.DateFormat;
 
-import com.github.dozermapper.core.AbstractDozerTest;
-
 import org.junit.Test;
+
+import com.github.dozermapper.core.AbstractDozerTest;
 
 public class ConverterTest extends AbstractDozerTest {
 

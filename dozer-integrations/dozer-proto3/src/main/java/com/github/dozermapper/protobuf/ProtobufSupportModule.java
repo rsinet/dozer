@@ -15,8 +15,11 @@
  */
 package com.github.dozermapper.protobuf;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Collections;
+
+import org.apache.commons.beanutils.BeanUtils;
 
 import com.github.dozermapper.core.DozerModule;
 import com.github.dozermapper.core.builder.BeanBuilderCreationStrategy;
@@ -47,9 +50,14 @@ public class ProtobufSupportModule implements DozerModule {
     @Deprecated
     @Override
     public void init(BeanContainer beanContainer, DestBeanCreator destBeanCreator, PropertyDescriptorFactory propertyDescriptorFactory) {
-        this.beanContainer = beanContainer;
-        this.destBeanCreator = destBeanCreator;
-        this.propertyDescriptorFactory = propertyDescriptorFactory;
+        try {
+            this.beanContainer = (BeanContainer) BeanUtils.cloneBean(beanContainer);
+            this.destBeanCreator = (DestBeanCreator) BeanUtils.cloneBean(destBeanCreator);
+            this.propertyDescriptorFactory = (PropertyDescriptorFactory) BeanUtils.cloneBean(propertyDescriptorFactory);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException
+                | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

@@ -15,13 +15,12 @@
  */
 package com.github.dozermapper.core.builder.model.jaxb;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-import lombok.ToString;
-
 import org.apache.commons.lang3.StringUtils;
+
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
+import lombok.ToString;
 
 @ToString
 @XmlType(name = "field-type")

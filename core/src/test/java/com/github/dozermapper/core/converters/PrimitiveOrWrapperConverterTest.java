@@ -15,6 +15,13 @@
  */
 package com.github.dozermapper.core.converters;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -30,18 +37,11 @@ import java.util.GregorianCalendar;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import com.github.dozermapper.core.AbstractDozerTest;
-import com.github.dozermapper.core.config.BeanContainer;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import com.github.dozermapper.core.AbstractDozerTest;
+import com.github.dozermapper.core.config.BeanContainer;
 
 public class PrimitiveOrWrapperConverterTest extends AbstractDozerTest {
 

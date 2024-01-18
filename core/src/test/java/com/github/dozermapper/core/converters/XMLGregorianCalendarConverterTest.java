@@ -15,6 +15,9 @@
  */
 package com.github.dozermapper.core.converters;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -23,13 +26,10 @@ import java.util.GregorianCalendar;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import com.github.dozermapper.core.AbstractDozerTest;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import com.github.dozermapper.core.AbstractDozerTest;
 
 public class XMLGregorianCalendarConverterTest extends AbstractDozerTest {
     private XMLGregorianCalendarConverter converter;

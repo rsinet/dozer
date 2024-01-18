@@ -15,21 +15,22 @@
  */
 package com.github.dozermapper.core.converters;
 
+import static com.github.dozermapper.core.loader.api.FieldsMappingOptions.customConverter;
+import static org.junit.Assert.assertEquals;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Stream;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import com.github.dozermapper.core.AbstractDozerTest;
 import com.github.dozermapper.core.DozerBeanMapperBuilder;
 import com.github.dozermapper.core.DozerConverter;
 import com.github.dozermapper.core.Mapper;
 import com.github.dozermapper.core.loader.api.BeanMappingBuilder;
-import org.junit.Before;
-import org.junit.Test;
-
-import static com.github.dozermapper.core.loader.api.FieldsMappingOptions.customConverter;
-import static org.junit.Assert.assertEquals;
 
 public class CustomConverterThreadSafetyTest extends AbstractDozerTest {
 

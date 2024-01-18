@@ -15,17 +15,17 @@
  */
 package com.github.dozermapper.core.converters;
 
+import static org.junit.Assert.assertEquals;
+
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.github.dozermapper.core.AbstractDozerTest;
-
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import com.github.dozermapper.core.AbstractDozerTest;
 
 public class StringConverterTest extends AbstractDozerTest {
 

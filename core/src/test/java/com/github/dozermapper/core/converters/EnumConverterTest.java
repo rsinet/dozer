@@ -15,9 +15,9 @@
  */
 package com.github.dozermapper.core.converters;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 public class EnumConverterTest {
     @Test

@@ -28,11 +28,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.XMLGregorianCalendar;
-
-import com.github.dozermapper.core.config.BeanContainer;
-import com.github.dozermapper.core.util.MappingUtils;
 
 import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.converters.BigDecimalConverter;
@@ -43,6 +39,11 @@ import org.apache.commons.beanutils.converters.ClassConverter;
 import org.apache.commons.beanutils.converters.DoubleConverter;
 import org.apache.commons.beanutils.converters.FloatConverter;
 import org.apache.commons.lang3.ClassUtils;
+
+import com.github.dozermapper.core.config.BeanContainer;
+import com.github.dozermapper.core.util.MappingUtils;
+
+import jakarta.xml.bind.JAXBElement;
 
 /**
  * Internal class for converting between wrapper types(including primitives). Only intended for internal use.
